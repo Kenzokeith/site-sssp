@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <title>Surveillance Commerciale - Sécurité Privée</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color:#b1b1b1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-image: url(https://www.westerndigital.com/content/dam/store/en-us/assets/solutions/surveillance/surveillance-smart-smart-commercial-hero.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: rgb(0, 110, 255);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+
+        header .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            padding: 80px 0;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-top: 4px solid #2a5298;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            font-size: 2rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #2a5298;
+        }
+
+        .service-card p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .service-features {
+            list-style: none;
+        }
+
+        .service-features li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #555;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .why-choose {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .why-choose h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .benefit-item {
+            text-align: center;
+        }
+
+        .benefit-icon {
+            width: 100px;
+            height: 100px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2.5rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .technologies {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .tech-item {
+            text-align: center;
+            padding: 30px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .tech-item:hover {
+            background: #f8f9fa;
+            transform: translateY(-5px);
+        }
+
+        .contact-section {
+            background: #2c3e50;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .contact-item {
+            padding: 30px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-item h4 {
+            margin-bottom: 15px;
+            color: #ff6b35;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #2a5298;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 50px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+                padding: 40px 0;
+            }
+            
+            .service-card {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Surveillance Commerciale</h1>
+            <p class="subtitle">Protection professionnelle 24h/24 pour votre entreprise</p>
+            <a href="#contact" class="cta-button">Demander un devis gratuit</a>
+        </div>
+    </header>
+
+    <section class="container">
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🏢</div>
+                <h3>Surveillance de Magasins</h3>
+                <p>Protection complète de vos points de vente contre le vol, la démarque et les incidents.</p>
+                <ul class="service-features">
+                    <li>Surveillance discrète en civil</li>
+                    <li>Prévention des vols à l'étalage</li>
+                    <li>Gestion des conflits clients</li>
+                    <li>Rapport détaillé d'intervention</li>
+                    <li>Formation du personnel</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🏭</div>
+                <h3>Sécurité Industrielle</h3>
+                <p>Sécurisation de vos sites industriels, entrepôts et zones de production.</p>
+                <ul class="service-features">
+                    <li>Contrôle d'accès renforcé</li>
+                    <li>Rondes de surveillance</li>
+                    <li>Protection des équipements</li>
+                    <li>Prévention des intrusions</li>
+                    <li>Surveillance nocturne</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🏢</div>
+                <h3>Bureaux & Commerces</h3>
+                <p>Sécurisation de vos espaces de travail et locaux commerciaux.</p>
+                <ul class="service-features">
+                    <li>Accueil et filtrage visiteurs</li>
+                    <li>Surveillance des parkings</li>
+                    <li>Protection des données sensibles</li>
+                    <li>Intervention rapide</li>
+                    <li>Télésurveillance</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🚛</div>
+                <h3>Transport de Fonds</h3>
+                <p>Sécurisation du transport de valeurs et marchandises sensibles.</p>
+                <ul class="service-features">
+                    <li>Escorte sécurisée</li>
+                    <li>Véhicules blindés</li>
+                    <li>Personnel formé et armé</li>
+                    <li>Traçabilité GPS</li>
+                    <li>Assurance complète</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📹</div>
+                <h3>Vidéosurveillance</h3>
+                <p>Installation et monitoring de systèmes de surveillance vidéo haute définition.</p>
+                <ul class="service-features">
+                    <li>Caméras HD et 4K</li>
+                    <li>Vision nocturne</li>
+                    <li>Stockage cloud sécurisé</li>
+                    <li>Monitoring 24h/24</li>
+                    <li>Alertes en temps réel</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🛡️</div>
+                <h3>Conseil en Sécurité</h3>
+                <p>Audit et optimisation de vos dispositifs de sécurité existants.</p>
+                <ul class="service-features">
+                    <li>Audit de vulnérabilités</li>
+                    <li>Plan de sécurité personnalisé</li>
+                    <li>Formation du personnel</li>
+                    <li>Mise aux normes</li>
+                    <li>Suivi et optimisation</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-choose">
+        <div class="container">
+            <h2>Pourquoi nous choisir ?</h2>
+            <p>Une expertise reconnue au service de votre sécurité</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">⚡</div>
+                    <h4>Intervention Rapide</h4>
+                    <p>Temps de réponse inférieur à 15 minutes en zone urbaine</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎓</div>
+                    <h4>Personnel Qualifié</h4>
+                    <p>Agents certifiés et formés aux dernières techniques</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🔒</div>
+                    <h4>Technologie Avancée</h4>
+                    <p>Équipements de pointe et systèmes connectés</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">📱</div>
+                    <h4>Disponibilité 24/7</h4>
+                    <p>Centre de contrôle opérationnel jour et nuit</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="technologies">
+        <div class="container">
+            <h2 class="section-title">Technologies Utilisées</h2>
+            <p class="section-subtitle">Des solutions technologiques de pointe pour une sécurité optimale</p>
+            
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <h4>🔍 Détection Intelligente</h4>
+                    <p>IA pour l'analyse comportementale et la détection d'anomalies</p>
+                </div>
+                <div class="tech-item">
+                    <h4>📡 Communication Sécurisée</h4>
+                    <p>Réseau radio crypté et applications mobiles dédiées</p>
+                </div>
+                <div class="tech-item">
+                    <h4>🌐 Géolocalisation</h4>
+                    <p>Suivi GPS en temps réel de nos équipes d'intervention</p>
+                </div>
+                <div class="tech-item">
+                    <h4>☁️ Cloud Sécurisé</h4>
+                    <p>Stockage et sauvegarde des données dans le cloud</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2>Contactez-nous</h2>
+            <p>Obtenez votre devis personnalisé en 24h</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h4>📞 Urgences 24h/24</h4>
+                    <p>+225 07 05 82 86 95</p>
+                </div>
+                <div class="contact-item">
+                    <h4>✉️ Devis Commercial</h4>
+                    <p>ss.securiteprivee@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                    <h4>📍 Siège Social</h4>
+                    <p>Cité Marina, Bingerville<br>Abidjan</p>
+                </div>
+                <div class="contact-item">
+                    <h4>⏰ Horaires Bureau</h4>
+                    <p>Lun-Ven: 8h-18h</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 40px;">
+                <a href="tel:+33123456789" class="cta-button">Appeler maintenant</a>
+            </div>
+        </div>
+    </section>
+</body>
+<footer>
+ <div style="text-align: center; padding-top: 2rem; border-top: 1px solid #374151;">
+    <p><strong>Notre Expertise, Votre Satisfaction!!!</strong></p>            
+    <p>&copy; 2025 Sea Samuel Sécurité Privée. Tous droits réservés. | Société agréée CAB</p>
+            </div>
+        </div>
+    </footer>
+</html>
