@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -602,4 +603,610 @@
             </div>
         </div>
     </footer>
+=======
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sécurité Événementielle - Sécurité Privée</title>
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-image: url(https://assets.deondernemer.nl/de-ondernemer/ANP060423163-1.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="30" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="2.5" fill="rgba(255,255,255,0.1)"/><circle cx="30" cy="60" r="1.8" fill="rgba(255,255,255,0.1)"/><circle cx="70" cy="70" r="2.2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        header .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, #fff, #f0f8ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 107, 53, 0.4);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 35px;
+            padding: 100px 0;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            padding: 45px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            border-top: 5px solid #667eea;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+            transition: height 0.3s ease;
+        }
+
+        .service-card:hover::before {
+            height: 8px;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        .service-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 18px;
+            color: #2c3e50;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .service-features {
+            list-style: none;
+        }
+
+        .service-features li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .stats-section {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .stat-item {
+            padding: 30px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.15);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #ff6b35;
+            margin-bottom: 10px;
+        }
+
+        .why-choose {
+            background: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .why-choose h2 {
+            font-size: 2.8rem;
+            margin-bottom: 60px;
+            color: #2c3e50;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            background: #f8f9fa;
+            transform: translateY(-10px);
+        }
+
+        .benefit-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 3rem;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .event-types {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            color: white;
+            padding: 100px 0;
+        }
+
+        .event-types h2 {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 60px;
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .event-card {
+            background: rgba(255,255,255,0.15);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .event-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.2);
+        }
+
+        .event-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .contact-section {
+            background: #2c3e50;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .contact-item {
+            padding: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.15);
+        }
+
+        .contact-item h4 {
+            margin-bottom: 20px;
+            color: #ff6b35;
+            font-size: 1.3rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+            color: #2c3e50;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+                padding: 60px 0;
+            }
+            
+            .service-card {
+                padding: 35px;
+            }
+
+            header {
+                padding: 80px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Sécurité Événementielle</h1>
+            <p class="subtitle">Protection professionnelle pour tous vos événements - Concerts, festivals, conférences, galas et manifestations sportives</p>
+            <a href="#contact" class="cta-button">Devis Gratuit 24h</a>
+        </div>
+    </header>
+
+    <section class="container">
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🎵</div>
+                <h3>Concerts & Festivals</h3>
+                <p>Sécurisation complète de vos événements musicaux avec gestion des foules et contrôle d'accès renforcé.</p>
+                <ul class="service-features">
+                    <li>Contrôle d'accès et fouilles</li>
+                    <li>Gestion des flux de spectateurs</li>
+                    <li>Surveillance des zones VIP</li>
+                    <li>Intervention anti-intrusion</li>
+                    <li>Coordination avec les forces de l'ordre</li>
+                    <li>Évacuation d'urgence</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🏢</div>
+                <h3>Événements Corporatifs</h3>
+                <p>Protection discrète et efficace pour vos séminaires, lancements produits et événements d'entreprise.</p>
+                <ul class="service-features">
+                    <li>Accueil et filtrage des invités</li>
+                    <li>Protection des personnalités</li>
+                    <li>Surveillance des espaces sensibles</li>
+                    <li>Contrôle des badges et accréditations</li>
+                    <li>Sécurisation des équipements</li>
+                    <li>Service discret et professionnel</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">⚽</div>
+                <h3>Événements Sportifs</h3>
+                <p>Expertise reconnue dans la sécurisation de compétitions sportives et manifestations athlétiques.</p>
+                <ul class="service-features">
+                    <li>Séparation des supporters</li>
+                    <li>Contrôle des tribunes</li>
+                    <li>Protection des athlètes</li>
+                    <li>Surveillance des vestiaires</li>
+                    <li>Gestion des incidents</li>
+                    <li>Coordination avec la police</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🎭</div>
+                <h3>Galas & Cérémonies</h3>
+                <p>Service premium pour vos événements de prestige avec protection adaptée aux personnalités.</p>
+                <ul class="service-features">
+                    <li>Protection rapprochée VIP</li>
+                    <li>Contrôle d'accès strict</li>
+                    <li>Surveillance périmétrique</li>
+                    <li>Gestion des médias</li>
+                    <li>Service de voiturier sécurisé</li>
+                    <li>Discrétion absolue</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🏛️</div>
+                <h3>Manifestations Publiques</h3>
+                <p>Sécurisation de vos événements en extérieur : marchés, foires, défilés et rassemblements.</p>
+                <ul class="service-features">
+                    <li>Balisage et canalisation</li>
+                    <li>Contrôle des périmètres</li>
+                    <li>Gestion des urgences médicales</li>
+                    <li>Surveillance des stands</li>
+                    <li>Coordination multi-services</li>
+                    <li>Plan d'évacuation</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">💍</div>
+                <h3>Événements Privés</h3>
+                <p>Protection sur-mesure pour vos réceptions privées, mariages et fêtes familiales.</p>
+                <ul class="service-features">
+                    <li>Surveillance discrète</li>
+                    <li>Contrôle des invitations</li>
+                    <li>Protection des cadeaux/biens</li>
+                    <li>Gestion du stationnement</li>
+                    <li>Service de sécurité invisible</li>
+                    <li>Intervention rapide</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="container">
+            <h2>Nos Références</h2>
+            <p>Une expertise reconnue dans la sécurité événementielle</p>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <h4>Événements Sécurisés</h4>
+                    <p>Par an</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50K+</div>
+                    <h4>Spectateurs Protégés</h4>
+                    <p>En moyenne par événement</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <h4>Disponibilité</h4>
+                    <p>Centre de contrôle</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">99.8%</div>
+                    <h4>Taux de Satisfaction</h4>
+                    <p>Clients satisfaits</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="event-types">
+        <div class="container">
+            <h2>Types d'Événements</h2>
+            
+            <div class="events-grid">
+                <div class="event-card">
+                    <h4>🎪 Festivals</h4>
+                    <p>Musique, arts, gastronomie</p>
+                </div>
+                <div class="event-card">
+                    <h4>🏆 Compétitions</h4>
+                    <p>Sports, e-sport, concours</p>
+                </div>
+                <div class="event-card">
+                    <h4>📚 Conférences</h4>
+                    <p>Salons, séminaires, formations</p>
+                </div>
+                <div class="event-card">
+                    <h4>🎉 Fêtes</h4>
+                    <p>Mariages, anniversaires, galas</p>
+                </div>
+                <div class="event-card">
+                    <h4>🛍️ Commerciaux</h4>
+                    <p>Lancements, inaugurations</p>
+                </div>
+                <div class="event-card">
+                    <h4>🏛️ Institutionnels</h4>
+                    <p>Cérémonies officielles</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-choose">
+        <div class="container">
+            <h2>Pourquoi Nous Choisir ?</h2>
+            <p class="section-subtitle">Une expertise événementielle reconnue par les plus grands organisateurs</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">⚡</div>
+                    <h4>Réactivité</h4>
+                    <p>Déploiement rapide de nos équipes formées aux situations d'urgence</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎯</div>
+                    <h4>Expertise</h4>
+                    <p>03 ans d'expérience dans la sécurité événementielle</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🛡️</div>
+                    <h4>Fiabilité</h4>
+                    <p>Équipes certifiées et assurance responsabilité civile</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">📱</div>
+                    <h4>Technologie</h4>
+                    <p>Équipements modernes et communication sécurisée</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2>Planifiez Votre Événement en Sécurité</h2>
+            <p>Contactez nos experts pour un devis personnalisé sous 24h</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h4>🚨 Urgences 24h/24</h4>
+                    <p><strong>+225 07 05 82 86 95</strong><br>Intervention immédiate</p>
+                </div>
+                <div class="contact-item">
+                    <h4>📋 Devis Événements</h4>
+                    <p><strong>ss.securiteprivee@gmail.com</strong><br>Réponse sous 2h</p>
+                </div>
+                <div class="contact-item">
+                    <h4>📍 Zone d'Intervention</h4>
+                    <p><strong>Côte d'Ivoire, Abidjan</strong><br>Déplacements nationaux</p>
+                </div>
+                <div class="contact-item">
+                    <h4>⏰ Planning</h4>
+                    <p><strong>7j/7 - 24h/24</strong><br>Disponibilité totale</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 50px;">
+                <a href="tel:+2250705828695" class="cta-button">Appel d'Urgence</a>
+                <a href="mailto:ss.securiteprivee@gmail.com" class="cta-button" style="margin-left: 20px;">Demande de Devis</a>
+            </div>
+        </div>
+    </section>
+</body>
+<footer>
+ <div style="text-align: center; padding-top: 2rem; border-top: 1px solid #374151;">
+    <p><strong>Notre Expertise, Votre Satisfaction!!!</strong></p>            
+    <p>&copy; 2025 SS-Sécurité Privée. Tous droits réservés. | Société agréée CAB</p>
+            </div>
+        </div>
+    </footer>
+>>>>>>> 9dbba55 (Mise à jour de la page avec les nouvelles modifications)
 </html>
