@@ -686,7 +686,21 @@
         </div>
     </footer>
 
+    <script src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("hQKTUZ6mQjhipZspm"); // trouvé dans EmailJS > Account > API Keys
+  })();
+
+  document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    emailjs.sendForm("service_abcd123", "template_i0zhwat", this)
+      .then(() => alert("Message envoyé ✅"))
+      .catch(err => alert("Erreur ❌ " + JSON.stringify(err)));
+  });
+</script>
     <script>
+        
         // Animation on scroll
         function animateOnScroll() {
             const elements = document.querySelectorAll('.animate-on-scroll');
