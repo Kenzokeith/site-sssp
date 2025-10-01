@@ -1,15 +1,29 @@
-(function() {
-  emailjs.init("hQKTUZ6mQjhipZspm");
+// Initialiser EmailJS avec ta clé publique
+(function(){
+  emailjs.init("frlZtCrXwL6yRRX3Y"); // ex: "abc123XYZ"
 })();
 
-document.addEventListener("DOMContentLoaded", () => {
+// Attacher l'événement au formulaire
+document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("contact-form");
-  if(form){
-    form.addEventListener("submit", function(e) {
-      e.preventDefault();
-      emailjs.sendForm("service_abcd123", "template_i0zhwat", this)
-        .then(() => alert("Message envoyé ✅"))
-        .catch(err => alert("Erreur ❌ " + JSON.stringify(err)));
-    });
-  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // Empêche le rechargement de la page
+
+    const params = {
+      from_name: document.getElementById("name").value,
+      from_email: document.getElementById("email").value,
+      message: document.getElementById("message").value
+    };
+
+    emailjs.send("SERVICE_ID", "TEMPLATE_ID", params)
+      .then(function(response) {
+        alert("✅ Message envoyé avec succès !");
+        console.log("SUCCESS!", response.status, response.text);
+        form.reset(); // Vide le formulaire après envoi
+      }, function(error) {
+        alert("❌ Erreur lors de l'envoi : " + JSON.stringify(error));
+        console.error("FAILED...", error);
+      });
+  });
 });

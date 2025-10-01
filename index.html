@@ -686,13 +686,7 @@
         </div>
     </footer>
 
-    <script src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
-
-   <script src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
-<script src="contact.js"></script>
-
-
-    <script>
+        <script>
         
         // Animation on scroll
         function animateOnScroll() {
@@ -760,9 +754,26 @@
     </script>
 
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script src="contact.js"></script>
+<script>
+  // Initialisation avec ta clé publique
+  emailjs.init("VrlZtCrXwL6yRRX3Y"); // Remplace par ta vraie clé
+
+  // Écoute l’envoi du formulaire
+  document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault(); // Empêche le rechargement de la page
+
+    emailjs.sendForm("service_4yeoptg", "template_i0zhwat", this)
+      .then(() => {
+        alert("✅ Message envoyé avec succès !");
+        this.reset(); // Réinitialise le formulaire
+      })
+      .catch((error) => {
+        alert("❌ Une erreur est survenue : " + error);
+      });
+  });
+</script>
 </body>
 
 </body>
 </html>
->>>>>>> 9dbba55 (Mise à jour de la page avec les nouvelles modifications)
+
