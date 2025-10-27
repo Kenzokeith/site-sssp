@@ -1,0 +1,8 @@
+CREATE DATABASE prospects;
+USE prospects;
+
+CREATE TABLE emails (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  email VARCHAR(255) NOT NULL,
+  date_enregistrement TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

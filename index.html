@@ -772,6 +772,19 @@
       });
   });
 </script>
+<script>
+    const age = prompt("Quel est votre age ? :");
+
+    if (age < 18) {
+        alert("Vous devez être majeur pour accéder à ce site.");
+        window.location.href = "https://www.google.com";
+    } else if (age >= 18) {
+        alert("Bienvenue sur le site de SS-Sécurité Privée !");
+    } else {
+        alert("Entrée invalide. Veuillez entrer un âge valide.");
+        window.location.href = "https://www.google.com";
+    }
+</script>
 </body>
 
 </body>
