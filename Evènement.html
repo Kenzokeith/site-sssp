@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sécurité Événementielle - Sécurité Privée</title>
-    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <title>SS-Sécurité Événementielle | Protection Professionnelle</title>
     <style>
         * {
             margin: 0;
@@ -16,22 +15,127 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #f8f9fa;
+            background: #f8f9fa;
         }
 
-        .container {
-            max-width: 1200px;
+        /* Navigation Menu */
+        .nav-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-wrapper.scrolled {
+            background: rgba(15, 23, 42, 0.98);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar {
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: #f59e0b;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #f59e0b;
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .nav-menu a:hover {
+            color: #f59e0b;
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            color: #fff !important;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta::after {
+            display: none;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+            background: linear-gradient(135deg, #d97706, #f59e0b);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            transition: all 0.3s ease;
+        }
+
+        /* Header/Hero Section */
         header {
-            background-image: url(https://assets.deondernemer.nl/de-ondernemer/ANP060423163-1.jpg);
+            background-image: url(https://sos-france.com/wp-content/uploads/2019/04/agent-events.jpg);
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
             color: white;
-            padding: 100px 0;
+            padding: 150px 2rem 100px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -44,181 +148,138 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="30" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="2.5" fill="rgba(255,255,255,0.1)"/><circle cx="30" cy="60" r="1.8" fill="rgba(255,255,255,0.1)"/><circle cx="70" cy="70" r="2.2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
-            animation: float 20s ease-in-out infinite;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23f59e0b" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+            opacity: 0.5;
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        header .container {
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
             position: relative;
-            z-index: 2;
+            z-index: 1;
         }
 
-        h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            background: linear-gradient(45deg, #fff, #f0f8ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeInDown 1s ease;
         }
 
         .subtitle {
-            font-size: 1.4rem;
-            margin-bottom: 40px;
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
             opacity: 0.95;
-            max-width: 600px;
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+            animation: fadeInUp 1s ease 0.3s backwards;
         }
 
-        .gallery-section {
-    background: linear-gradient(135deg, #000000 0%, #ffffff 100%);
-    padding: 80px 0 60px 0;
-    text-align: center;
-}
-.gallery-section h2 {
-    font-size: 2.5rem;
-    color: #ffffff;
-    margin-bottom: 35px;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 28px;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-.gallery-item {
-    background: white;
-    border-radius: 18px;
-    box-shadow: 0 8px 32px rgba(67, 198, 172, 0.15);
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-    position: relative;
-}
-.gallery-item:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 16px 48px rgba(67, 198, 172, 0.25);
-}
-.gallery-item img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    display: block;
-    border-radius: 18px 18px 0 0;
-    transition: filter 0.3s;
-}
-.gallery-item:hover img {
-    filter: brightness(0.92) saturate(1.2);
-}
-@media (max-width: 768px) {
-    .gallery-section {
-        padding: 40px 0 20px 0;
-    }
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-    .gallery-item img {
-        height: 150px;
-    }
-}
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
         .cta-button {
             display: inline-block;
-            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            background: linear-gradient(135deg, #f59e0b, #d97706);
             color: white;
-            padding: 18px 40px;
+            padding: 1rem 2.5rem;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
             font-size: 1.1rem;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            box-shadow: 0 6px 25px rgba(245, 158, 11, 0.4);
+            animation: fadeInUp 1s ease 0.6s backwards;
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(255, 107, 53, 0.4);
+            box-shadow: 0 8px 30px rgba(245, 158, 11, 0.6);
+            background: linear-gradient(135deg, #d97706, #f59e0b);
+        }
+
+        /* Services Section */
+        section {
+            padding: 80px 2rem;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #0f172a;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #64748b;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 35px;
-            padding: 100px 0;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
         }
 
         .service-card {
-            background: white;
+            background: rgb(255, 255, 255);
+            padding: 2.5rem;
             border-radius: 20px;
-            padding: 45px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-            transition: all 0.4s ease;
-            border-top: 5px solid #667eea;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
-            transition: height 0.3s ease;
-        }
-
-        .service-card:hover::before {
-            height: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
         }
 
         .service-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-color: #f59e0b;
         }
 
         .service-icon {
-            width: 90px;
-            height: 90px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 30px;
-            font-size: 2.5rem;
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .service-card:hover .service-icon {
-            transform: scale(1.1) rotate(-5deg);
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
         }
 
         .service-card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 18px;
-            color: #2c3e50;
-            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #0f172a;
         }
 
         .service-card p {
-            color: #666;
-            margin-bottom: 25px;
-            font-size: 1.05rem;
+            color: #64748b;
+            margin-bottom: 1.5rem;
             line-height: 1.7;
         }
 
@@ -227,209 +288,281 @@
         }
 
         .service-features li {
-            padding: 10px 0;
-            padding-left: 30px;
+            padding: 0.6rem 0;
+            color: #475569;
+            padding-left: 1.5rem;
             position: relative;
-            color: #555;
-            font-size: 0.95rem;
         }
 
         .service-features li::before {
             content: '✓';
             position: absolute;
             left: 0;
-            color: #28a745;
+            color: #f59e0b;
             font-weight: bold;
-            font-size: 1.2rem;
         }
 
+        /* Stats Section */
         .stats-section {
-            background: linear-gradient(135deg, #2c3e50, #34495e);
+            background: linear-gradient(135deg, #0f172a, #ffffff);
             color: white;
-            padding: 80px 0;
-            text-align: center;
         }
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
         }
 
         .stat-item {
-            padding: 30px;
-            background: rgba(255,255,255,0.1);
+            text-align: center;
+            padding: 2rem;
+            background: #ffffff0d;
             border-radius: 15px;
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
         }
 
         .stat-item:hover {
-            transform: translateY(-5px);
-            background: rgba(255,255,255,0.15);
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(1.05);
         }
 
         .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            color: #ff6b35;
-            margin-bottom: 10px;
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #f59e0b;
+            margin-bottom: 0.5rem;
         }
 
-        .why-choose {
+        .stat-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+        }
+
+        /* Events Grid */
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .event-card {
             background: white;
-            padding: 100px 0;
+            padding: 2rem;
+            border-radius: 15px;
             text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
         }
 
-        .why-choose h2 {
-            font-size: 2.8rem;
-            margin-bottom: 60px;
-            color: #2c3e50;
+        .event-card:hover {
+            border-color: #f59e0b;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.2);
         }
 
+        .event-card h4 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #0f172a;
+        }
+
+        .event-card p {
+            color: #64748b;
+        }
+
+        /* Gallery */
+        .gallery-section {
+            background: #f1f5f9;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            aspect-ratio: 4/3;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Benefits */
         .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
         }
 
         .benefit-item {
             text-align: center;
-            padding: 40px 20px;
-            border-radius: 15px;
-            transition: all 0.3s ease;
-        }
-
-        .benefit-item:hover {
-            background: #f8f9fa;
-            transform: translateY(-10px);
+            padding: 2rem;
         }
 
         .benefit-icon {
-            width: 120px;
-            height: 120px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 25px;
-            font-size: 3rem;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
         }
 
-        .event-types {
-            background: linear-gradient(135deg, #f093fb, #f5576c);
-            color: white;
-            padding: 100px 0;
-        }
-
-        .event-types h2 {
-            text-align: center;
-            font-size: 2.8rem;
-            margin-bottom: 60px;
-        }
-
-        .events-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .event-card {
-            background: rgba(255,255,255,0.15);
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-
-        .event-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255,255,255,0.2);
-        }
-
-        .event-card h4 {
+        .benefit-item h4 {
             font-size: 1.3rem;
-            margin-bottom: 15px;
+            margin-bottom: 1rem;
+            color: #0f172a;
         }
 
+        .benefit-item p {
+            color: #64748b;
+            line-height: 1.7;
+        }
+
+        /* Contact Section */
         .contact-section {
-            background: #2c3e50;
+            background: linear-gradient(135deg, #1e293b, #0f172a);
             color: white;
-            padding: 100px 0;
-            text-align: center;
         }
 
         .contact-info {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
         }
 
         .contact-item {
-            padding: 40px;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
             border-radius: 15px;
+            text-align: center;
             backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
         }
 
         .contact-item:hover {
+            background: rgba(255, 255, 255, 0.1);
             transform: translateY(-5px);
-            background: rgba(255,255,255,0.15);
         }
 
         .contact-item h4 {
-            margin-bottom: 20px;
-            color: #ff6b35;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #f59e0b;
         }
 
-        .section-title {
-            text-align: center;
-            font-size: 2.8rem;
-            margin-bottom: 25px;
-            color: #2c3e50;
+        .contact-item p {
+            color: #cbd5e1;
         }
 
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.3rem;
-            color: #666;
-            margin-bottom: 60px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+        .contact-item strong {
+            color: white;
+            font-size: 1.1rem;
         }
 
+        /* Footer */
+        footer {
+            background: #2a260f;
+            color: white;
+            padding: 3rem 2rem 2rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+            color: #cbd5e1;
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2.8rem;
-            }
-            
-            .services-grid {
-                grid-template-columns: 1fr;
-                padding: 60px 0;
-            }
-            
-            .service-card {
-                padding: 35px;
+            .menu-toggle {
+                display: flex;
             }
 
-            header {
-                padding: 80px 0;
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: rgba(15, 23, 42, 0.98);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                padding: 2rem 0;
+                gap: 1.5rem;
             }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .services-grid,
+            .events-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
 <body>
-    <header>
+    <!-- Navigation -->
+    <nav class="nav-wrapper">
+        <div class="navbar">
+            <a href="#" class="logo">
+                 <div class="logo"> <img src="images/logo.png" alt="Logo de l'Entreprise" width="50" height="50">SS-SP </div>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Galerie</a></li>
+                <li><a href="#apropos">À Propos</a></li>
+                <li><a href="#contact" class="nav-cta">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header id="accueil">
         <div class="container">
             <h1>Sécurité Événementielle</h1>
             <p class="subtitle">Protection professionnelle pour tous vos événements - Concerts, festivals, conférences, galas et manifestations sportives</p>
@@ -437,7 +570,11 @@
         </div>
     </header>
 
-    <section class="container">
+    <!-- Services -->
+    <section class="container" id="services">
+        <h2>Nos Services</h2>
+        <p class="section-subtitle">Des solutions de sécurité complètes et adaptées à chaque type d'événement</p>
+        
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon">🎵</div>
@@ -525,10 +662,11 @@
         </div>
     </section>
 
+    <!-- Stats -->
     <section class="stats-section">
         <div class="container">
             <h2>Nos Références</h2>
-            <p>Une expertise reconnue dans la sécurité événementielle</p>
+            <p class="section-subtitle" style="color: #cbd5e1;">Une expertise reconnue dans la sécurité événementielle</p>
             
             <div class="stats-grid">
                 <div class="stat-item">
@@ -555,55 +693,58 @@
         </div>
     </section>
 
-    <section class="event-types">
-        <div class="container">
-            <h2>Types d'Événements</h2>
-            
-            <div class="events-grid">
-                <div class="event-card">
-                    <h4>🎪 Festivals</h4>
-                    <p>Musique, arts, gastronomie</p>
-                </div>
-                <div class="event-card">
-                    <h4>🏆 Compétitions</h4>
-                    <p>Sports, e-sport, concours</p>
-                </div>
-                <div class="event-card">
-                    <h4>📚 Conférences</h4>
-                    <p>Salons, séminaires, formations</p>
-                </div>
-                <div class="event-card">
-                    <h4>🎉 Fêtes</h4>
-                    <p>Mariages, anniversaires, galas</p>
-                </div>
-                <div class="event-card">
-                    <h4>🛍️ Commerciaux</h4>
-                    <p>Lancements, inaugurations</p>
-                </div>
-                <div class="event-card">
-                    <h4>🏛️ Institutionnels</h4>
-                    <p>Cérémonies officielles</p>
-                </div>
+    <!-- Event Types -->
+    <section class="container event-types">
+        <h2>Types d'Événements</h2>
+        
+        <div class="events-grid">
+            <div class="event-card">
+                <h4>🎪 Festivals</h4>
+                <p>Musique, arts, gastronomie</p>
+            </div>
+            <div class="event-card">
+                <h4>🏆 Compétitions</h4>
+                <p>Sports, e-sport, concours</p>
+            </div>
+            <div class="event-card">
+                <h4>📚 Conférences</h4>
+                <p>Salons, séminaires, formations</p>
+            </div>
+            <div class="event-card">
+                <h4>🎉 Fêtes</h4>
+                <p>Mariages, anniversaires, galas</p>
+            </div>
+            <div class="event-card">
+                <h4>🛍️ Commerciaux</h4>
+                <p>Lancements, inaugurations</p>
+            </div>
+            <div class="event-card">
+                <h4>🏛️ Institutionnels</h4>
+                <p>Cérémonies officielles</p>
             </div>
         </div>
     </section>
 
-    <section class="gallery-section">
-        <h2><strong><u>NOS SORTIES EN IMAGES</u></strong></h2>
-        <div class="gallery-grid">
-            <div class="gallery-item"><img src="images/1 (1).jpeg" alt="Nos agents sur le terrain"></div>
-            <div class="gallery-item"><img src="images/1 (3).jpeg" alt="Nos agents sur le terrain"></div>
-            <div class="gallery-item"><img src="images/1 (4).jpeg" alt="Préparation des Agents"></div>
-            <div class="gallery-item"><img src="images/1 (9).jpeg" alt="Présentation de l'équipe de prévention incendie"></div>
-            <div class="gallery-item"><img src="images/1 (5).jpeg" alt="Protection des civiles"></div>
-            <div class="gallery-item"><img src="images/1 (8).jpeg" alt="Protection des civiles"></img></div>
-            <div class="gallery-item"><img src="images/1ba81435-5693-4ce0-9198-e92f4a813ee4.jpeg" alt="Une équipe dynamique"></div>
-            <div class="gallery-item"><img src="images/13.jpeg" alt="Protection"></div>
-            <div class="gallery-item"><img src="images/14.jpeg" alt="Protection"></div>
+    <!-- Gallery -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <h2>NOS SORTIES EN IMAGES</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="images/1 (1).jpeg" alt="Nos agents sur le terrain"></div>
+                <div class="gallery-item"><img src="images/1 (3).jpeg" alt="Nos agents sur le terrain"></div>
+                <div class="gallery-item"><img src="images/1 (4).jpeg" alt="Préparation des Agents"></div>
+                <div class="gallery-item"><img src="images/1 (9).jpeg" alt="Présentation de l'équipe de prévention incendie"></div>
+                <div class="gallery-item"><img src="images/1 (5).jpeg" alt="Protection des civiles"></div>
+                <div class="gallery-item"><img src="images/1 (8).jpeg" alt="Protection des civiles"></div>
+                <div class="gallery-item"><img src="images/1ba81435-5693-4ce0-9198-e92f4a813ee4.jpeg" alt="Une équipe dynamique"></div>
+                <div class="gallery-item"><img src="images/13.jpeg" alt="Protection"></div>
+                <div class="gallery-item"><img src="images/14.jpeg" alt="Protection"></div>
+            </div>
         </div>
     </section>
 
-    <section class="why-choose">
+    <!-- Why Choose Us -->
+    <section class="why-choose" id="apropos">
         <div class="container">
             <h2>Pourquoi Nous Choisir ?</h2>
             <p class="section-subtitle">Une expertise événementielle reconnue par les plus grands organisateurs</p>
@@ -633,10 +774,11 @@
         </div>
     </section>
 
+    <!-- Contact -->
     <section class="contact-section" id="contact">
         <div class="container">
             <h2>Planifiez Votre Événement en Sécurité</h2>
-            <p>Contactez nos experts pour un devis personnalisé sous 24h</p>
+            <p class="section-subtitle" style="color: #cbd5e1;">Contactez nos experts pour un devis personnalisé sous 24h</p>
             
             <div class="contact-info">
                 <div class="contact-item">
@@ -657,19 +799,19 @@
                 </div>
             </div>
             
-            <div style="margin-top: 50px;">
+            <div style="margin-top: 50px; text-align: center;">
                 <a href="tel:+2250705828695" class="cta-button">Appel d'Urgence</a>
                 <a href="mailto:ss.securiteprivee@gmail.com" class="cta-button" style="margin-left: 20px;">Demande de Devis</a>
             </div>
         </div>
     </section>
-</body>
-<footer>
- <div style="text-align: center; padding-top: 2rem; border-top: 1px solid #374151;">
-    <p><strong>Notre Expertise, Votre Satisfaction!!!</strong></p>            
-    <p>&copy; 2025 SS-Sécurité Privée. Tous droits réservés. | Société agréée CAB</p>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div style="text-align: center; padding-top: 2rem; border-top: 1px solid #374151;">
+                <p><strong>Notre Expertise, Votre Satisfaction!!!</strong></p>            
+                <p>&copy; 2025 SS-Sécurité Privée. Tous droits réservés. | Société agréée CAB</p>
             </div>
         </div>
     </footer>
->>>>>>> 9dbba55 (Mise à jour de la page avec les nouvelles modifications)
-</html>
